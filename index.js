@@ -53,12 +53,6 @@ const usercollection = client.db('ProductDB').collection('Product')
       res.send(result)
     })
 
-    // app.get('/card',async(req,res)=>{
-    //   const curse = usercollection.find();
-    //   const result = await curse.toArray();
-    //   res.send(result);
-      
-    // })
     app.get('/card/:brand',async(req,res)=>{
       const brand = req.params.brand
       const query = {brand :brand}
@@ -66,18 +60,7 @@ const usercollection = client.db('ProductDB').collection('Product')
       const result = await curse.toArray()
       res.send(result)
     })
-    // app.get('/users',async(req,res)=>{
-    //   const curse = firbaseCOllection.find();
-    //   const result = await curse.toArray();
-    //   res.send(result)
-    // })
-
-    // app.delete('/card/:id',async(req,res)=>{
-    //   const id = req.params.id
-    //   const query = {_id : new ObjectId(id)}
-    //   const result = await usercollection.deleteOne(query)
-    //   res.send(result)
-    // })
+   
     app.delete('/user/:id',async(req,res)=>{
       const id = req.params.id;
       const query = {_id : new ObjectId(id)}
