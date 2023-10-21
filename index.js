@@ -41,17 +41,24 @@ const usercollection = client.db('ProductDB').collection('Product')
         const result = await usercollection.insertOne(Myproduct)
         res.send(result)
     })
-    // app.post('/users',async(req,res)=>{
-    //   const firebase = req.body;
-    //   const result = await firbaseCOllection.insertOne(firebase)
-    //   res.send(result)
-    // })
-    app.get('/card',async(req,res)=>{
-      const curse = usercollection.find();
-      const result = await curse.toArray();
-      res.send(result);
-      
+    app.post('/user',async(req,res)=>{
+      const firebase = req.body;
+      console.log(firebase)
+      const result = await firbaseCOllection.insertOne(firebase)
+      res.send(result)
     })
+    app.get('/user',async(req,res)=>{
+      const curse = firbaseCOllection.find();
+      const result = await curse.toArray();
+      res.send(result)
+    })
+
+    // app.get('/card',async(req,res)=>{
+    //   const curse = usercollection.find();
+    //   const result = await curse.toArray();
+    //   res.send(result);
+      
+    // })
     app.get('/card/:brand',async(req,res)=>{
       const brand = req.params.brand
       const query = {brand :brand}
