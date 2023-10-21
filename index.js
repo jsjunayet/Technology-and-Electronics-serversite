@@ -43,7 +43,6 @@ const usercollection = client.db('ProductDB').collection('Product')
     })
     app.post('/user',async(req,res)=>{
       const firebase = req.body;
-      console.log(firebase)
       const result = await firbaseCOllection.insertOne(firebase)
       res.send(result)
     })
