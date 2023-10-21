@@ -78,12 +78,12 @@ const usercollection = client.db('ProductDB').collection('Product')
     //   const result = await usercollection.deleteOne(query)
     //   res.send(result)
     // })
-    // app.delete('/users/:id',async(req,res)=>{
-    //   const id = req.params.id;
-    //   const query = {_id : new ObjectId(id)}
-    //   const result = await firbaseCOllection.deleteOne(query)
-    //   res.send(result)
-    // })
+    app.delete('/user/:id',async(req,res)=>{
+      const id = req.params.id;
+      const query = {_id : new ObjectId(id)}
+      const result = await firbaseCOllection.deleteOne(query)
+      res.send(result)
+    })
 
 
     app.get('/update/:id',async(req,res)=>{
